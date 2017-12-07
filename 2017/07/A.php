@@ -15,7 +15,7 @@ function clean(&$content)
         $weight = explode(" ", $row[0])[1];
         $row['parent'] = [
             'key' => $key,
-            'weight' => $weight
+            'weight' => trim($weight, '()')
         ];
 
         if (array_key_exists(1, $row)) {
@@ -48,4 +48,4 @@ function determineBase($instructions)
     return array_keys(array_intersect(array_count_values($flattened), [1]))[0];
 }
 
-echo determineBase(getInput()); // vtzay
+echo "Base: " . determineBase(getInput()) . "\n"; // Base: vtzay
