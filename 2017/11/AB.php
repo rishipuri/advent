@@ -61,7 +61,6 @@ function calculateDistance($paths)
     $cubeStart = axialToCube($hexStart);
     $cubeEnd = axialToCube($hexEnd);
 
-    // cube distance
     return [
         'shortestDistance' => cubeDistance($cubeStart, $cubeEnd),
         'furthestDistance' => $furthestDistance
